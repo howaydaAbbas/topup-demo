@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="CREATE_TOPUP_DATA_TABLE" author="Howayda">
+        <createTable tableName="topup_data">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_topup_data"/>
+            </column>
+            <column name="amount" type="double"/>
+            <column name="currency" type="VARCHAR(50)"/>
+            <column name="charge_id" type="VARCHAR(255)"/>
+            <column name="customer_id" type="VARCHAR(255)"/>
+            <column name="wallet_id" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(50)"/>
+            <column name="fees_amount" type="double"/>
+            <column name="fees_currency" type="VARCHAR(50)"/>
+            <column name="creation_date" type="datetime"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="topup_data"
+                                 constraintName="fk_topup_data_on_customer_id"
+                                 referencedColumnNames="id" referencedTableName="customer"/>
+    </changeSet>
+
+</databaseChangeLog>

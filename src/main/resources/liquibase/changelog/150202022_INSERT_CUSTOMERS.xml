@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
+
+    <changeSet author="Howayda" id="INSERT_CUSTOMER_DATA">
+        <insert tableName="customer">
+            <column name="id" value="478a76bb-d10e-4f4c-bc13-8ec471f33cfa"/>
+        </insert>
+        <insert tableName="customer">
+            <column name="id" value="c40f2d01-93e1-4353-81d9-cab09b1ac4e3"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
